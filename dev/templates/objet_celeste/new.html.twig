@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ObjetCeleste{% endblock %}
+
+{% block body %}
+    <h1>Create new ObjetCeleste</h1>
+
+    {{ include('objet_celeste/_form.html.twig') }}
+
+    <a href="{{ path('app_objet_celeste_index') }}">back to list</a>
+{% endblock %}

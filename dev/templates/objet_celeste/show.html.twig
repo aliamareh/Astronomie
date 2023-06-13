@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ObjetCeleste{% endblock %}
+
+{% block body %}
+    <h1>ObjetCeleste</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ objet_celeste.id }}</td>
+            </tr>
+            <tr>
+                <th>IC_NGC</th>
+                <td>{{ objet_celeste.ICNGC }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ objet_celeste.Name }}</td>
+            </tr>
+            <tr>
+                <th>NGC</th>
+                <td>{{ objet_celeste.NGC }}</td>
+            </tr>
+            <tr>
+                <th>IC</th>
+                <td>{{ objet_celeste.IC }}</td>
+            </tr>
+            <tr>
+                <th>Object_Type_abrev</th>
+                <td>{{ objet_celeste.ObjectTypeAbrev }}</td>
+            </tr>
+            <tr>
+                <th>Object_type</th>
+                <td>{{ objet_celeste.ObjectType }}</td>
+            </tr>
+            <tr>
+                <th>Ra</th>
+                <td>{{ objet_celeste.ra }}</td>
+            </tr>
+            <tr>
+                <th>Declinaison</th>
+                <td>{{ objet_celeste.declinaison }}</td>
+            </tr>
+            <tr>
+                <th>Major_axis</th>
+                <td>{{ objet_celeste.MajorAxis }}</td>
+            </tr>
+            <tr>
+                <th>Minor_axis</th>
+                <td>{{ objet_celeste.MinorAxis }}</td>
+            </tr>
+            <tr>
+                <th>Position_angle</th>
+                <td>{{ objet_celeste.PositionAngle }}</td>
+            </tr>
+            <tr>
+                <th>B_mag</th>
+                <td>{{ objet_celeste.bMag }}</td>
+            </tr>
+            <tr>
+                <th>V_mag</th>
+                <td>{{ objet_celeste.vMag }}</td>
+            </tr>
+            <tr>
+                <th>J_mag</th>
+                <td>{{ objet_celeste.jMag }}</td>
+            </tr>
+            <tr>
+                <th>H_mag</th>
+                <td>{{ objet_celeste.hMag }}</td>
+            </tr>
+            <tr>
+                <th>K_mag</th>
+                <td>{{ objet_celeste.kMag }}</td>
+            </tr>
+            <tr>
+                <th>Surface_Brigthness</th>
+                <td>{{ objet_celeste.SurfaceBrigthness }}</td>
+            </tr>
+            <tr>
+                <th>Hubble_Galaxies</th>
+                <td>{{ objet_celeste.HubbleGalaxies }}</td>
+            </tr>
+            <tr>
+                <th>Cstar_UMag</th>
+                <td>{{ objet_celeste.CstarUMag }}</td>
+            </tr>
+            <tr>
+                <th>Cstar_BMag</th>
+                <td>{{ objet_celeste.CstarBMag }}</td>
+            </tr>
+            <tr>
+                <th>Cstar_VMag</th>
+                <td>{{ objet_celeste.CstarVMag }}</td>
+            </tr>
+            <tr>
+                <th>Cstar_Names</th>
+                <td>{{ objet_celeste.CstarNames }}</td>
+            </tr>
+            <tr>
+                <th>Identifiers</th>
+                <td>{{ objet_celeste.identifiers }}</td>
+            </tr>
+            <tr>
+                <th>Common_names</th>
+                <td>{{ objet_celeste.commonNames }}</td>
+            </tr>
+            <tr>
+                <th>Ned_notes</th>
+                <td>{{ objet_celeste.nedNotes }}</td>
+            </tr>
+            <tr>
+                <th>Openngc_notes</th>
+                <td>{{ objet_celeste.openngcNotes }}</td>
+            </tr>
+            <tr>
+                <th>Pictures</th>
+                <td>{{ objet_celeste.Pictures }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_objet_celeste_index') }}">back to list</a>
+
+    <a href="{{ path('app_objet_celeste_edit', {'id': objet_celeste.id}) }}">edit</a>
+
+    {{ include('objet_celeste/_delete_form.html.twig') }}
+{% endblock %}

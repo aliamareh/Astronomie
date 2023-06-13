@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MessierCatalogue index{% endblock %}
+
+{% block body %}
+    <h1>MessierCatalogue index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Image </th>
+                <th>Messier</th>
+                <th>NGC</th>
+                <th>Object_type</th>
+                <th>Season</th>
+                <th>Magnitude</th>
+                <th>Constellation_EN</th>
+                <th>Constellation_FR</th>
+                <th>Constellation_Latin</th>
+                <th>RA_Right_Ascension</th>
+                <th>Dec_Declinaison</th>
+                <th>Distance_ly_a_l</th>
+                <th>Size_Dimension</th>
+                <th>Discoverer</th>
+                <th>Year_Annee</th>
+                <th>Constellation</th>
+                <th>Id</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for messier_catalogue in messier_catalogues %}
+            <tr>
+                <td><img src={{ messier_catalogue.URLDeLimage }} /></td>
+                <td>{{ messier_catalogue.Messier }}</td>
+                <td>{{ messier_catalogue.NGC }}</td>
+                <td>{{ messier_catalogue.ObjectType }}</td>
+                <td>{{ messier_catalogue.Season }}</td>
+                <td>{{ messier_catalogue.Magnitude }}</td>
+                <td>{{ messier_catalogue.ConstellationEN }}</td>
+                <td>{{ messier_catalogue.ConstellationFR }}</td>
+                <td>{{ messier_catalogue.ConstellationLatin }}</td>
+                <td>{{ messier_catalogue.RARightAscension }}</td>
+                <td>{{ messier_catalogue.DecDeclinaison }}</td>
+                <td>{{ messier_catalogue.DistanceLyAL }}</td>
+                <td>{{ messier_catalogue.SizeDimension }}</td>
+                <td>{{ messier_catalogue.Discoverer }}</td>
+                <td>{{ messier_catalogue.YearAnnee }}</td>
+                <td>{{ messier_catalogue.Constellation }}</td>
+                <td>{{ messier_catalogue.id }}</td>
+                <td>
+                    <a href="{{ path('app_messier_catalogue_show', {'id': messier_catalogue.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="19">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_messier_catalogue_new') }}">Create new</a>
+{% endblock %}

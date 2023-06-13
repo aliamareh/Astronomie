@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Constellation{% endblock %}
+
+{% block body %}
+    <h1>Create new Constellation</h1>
+
+    {{ include('constellation/_form.html.twig') }}
+
+    <a href="{{ path('app_constellation_index') }}">back to list</a>
+{% endblock %}

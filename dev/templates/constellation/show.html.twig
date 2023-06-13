@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Constellation{% endblock %}
+
+{% block body %}
+    <h1>Constellation</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Image</th>
+            <td> <img src={{ constellation.pictures }}/> </td>
+        </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ constellation.id }}</td>
+            </tr>
+            <tr>
+                <th>Observation_Season</th>
+                <td>{{ constellation.ObservationSeason }}</td>
+            </tr>
+            <tr>
+                <th>Code_Constellation</th>
+                <td>{{ constellation.CodeConstellation }}</td>
+            </tr>
+            <tr>
+                <th>Latin_name</th>
+                <td>{{ constellation.LatinName }}</td>
+            </tr>
+            <tr>
+                <th>French_name</th>
+                <td>{{ constellation.FrenchName }}</td>
+            </tr>
+            <tr>
+                <th>English_name</th>
+                <td>{{ constellation.EnglishName }}</td>
+            </tr>
+            <tr>
+                <th>Area_in_square_degrees</th>
+                <td>{{ constellation.areaInSquareDegrees }}</td>
+            </tr>
+            <tr>
+                <th>Dec_Declinaison</th>
+                <td>{{ constellation.DecDeclinaison }}</td>
+            </tr>
+            <tr>
+                <th>RA_Right_Ascension</th>
+                <td>{{ constellation.RARightAscension }}</td>
+            </tr>
+            <tr>
+                <th>Principal_star</th>
+                <td>{{ constellation.PrincipalStar }}</td>
+            </tr>
+            <tr>
+                <th>Area_celestial_sphere</th>
+                <td>{{ constellation.areaCelestialSphere }}</td>
+            </tr>
+            <tr>
+                <th>Zone_celestial_equator</th>
+                <td>{{ constellation.zoneCelestialEquator }}</td>
+            </tr>
+            <tr>
+                <th>Zone_ecliptic</th>
+                <td>{{ constellation.zoneEcliptic }}</td>
+            </tr>
+            <tr>
+                <th>Zone_Milky_Way</th>
+                <td>{{ constellation.zoneMilkyWay }}</td>
+            </tr>
+            <tr>
+                <th>Quad</th>
+                <td>{{ constellation.Quad }}</td>
+            </tr>
+            <tr>
+                <th>Name_origin</th>
+                <td>{{ constellation.NameOrigin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_constellation_index') }}">back to list</a>
+
+    <a href="{{ path('app_constellation_edit', {'id': constellation.id}) }}">edit</a>
+
+    {{ include('constellation/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ObjetCeleste index{% endblock %}
+
+{% block body %}
+    <h1>ObjetCeleste index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>IC_NGC</th>
+                <th>Name</th>
+                <th>NGC</th>
+                <th>IC</th>
+                <th>Object_Type_abrev</th>
+                <th>Object_type</th>
+                <th>Ra</th>
+                <th>Declinaison</th>
+                <th>Major_axis</th>
+                <th>Minor_axis</th>
+                <th>Position_angle</th>
+                <th>B_mag</th>
+                <th>V_mag</th>
+                <th>J_mag</th>
+                <th>H_mag</th>
+                <th>K_mag</th>
+                <th>Surface_Brigthness</th>
+                <th>Hubble_Galaxies</th>
+                <th>Cstar_UMag</th>
+                <th>Cstar_BMag</th>
+                <th>Cstar_VMag</th>
+                <th>Cstar_Names</th>
+                <th>Identifiers</th>
+                <th>Common_names</th>
+                <th>Ned_notes</th>
+                <th>Openngc_notes</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for objet_celeste in objet_celestes %}
+            <tr>
+                <td>{{ objet_celeste.id }}</td>
+                <td>{{ objet_celeste.ICNGC }}</td>
+                <td>{{ objet_celeste.Name }}</td>
+                <td>{{ objet_celeste.NGC }}</td>
+                <td>{{ objet_celeste.IC }}</td>
+                <td>{{ objet_celeste.ObjectTypeAbrev }}</td>
+                <td>{{ objet_celeste.ObjectType }}</td>
+                <td>{{ objet_celeste.ra }}</td>
+                <td>{{ objet_celeste.declinaison }}</td>
+                <td>{{ objet_celeste.MajorAxis }}</td>
+                <td>{{ objet_celeste.MinorAxis }}</td>
+                <td>{{ objet_celeste.PositionAngle }}</td>
+                <td>{{ objet_celeste.bMag }}</td>
+                <td>{{ objet_celeste.vMag }}</td>
+                <td>{{ objet_celeste.jMag }}</td>
+                <td>{{ objet_celeste.hMag }}</td>
+                <td>{{ objet_celeste.kMag }}</td>
+                <td>{{ objet_celeste.SurfaceBrigthness }}</td>
+                <td>{{ objet_celeste.HubbleGalaxies }}</td>
+                <td>{{ objet_celeste.CstarUMag }}</td>
+                <td>{{ objet_celeste.CstarBMag }}</td>
+                <td>{{ objet_celeste.CstarVMag }}</td>
+                <td>{{ objet_celeste.CstarNames }}</td>
+                <td>{{ objet_celeste.identifiers }}</td>
+                <td>{{ objet_celeste.commonNames }}</td>
+                <td>{{ objet_celeste.nedNotes }}</td>
+                <td>{{ objet_celeste.openngcNotes }}</td>
+                <td>{{ objet_celeste.pictures }}</td>
+                <td>
+                    <a href="{{ path('app_objet_celeste_show', {'id': objet_celeste.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="29">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_objet_celeste_new') }}">Create new</a>
+{% endblock %}

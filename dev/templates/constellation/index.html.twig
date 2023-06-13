@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Constellation index{% endblock %}
+
+{% block body %}
+    <h1>Constellation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr><th>Image</th>
+                <th>Observation_Season</th>
+                <th>Code_Constellation</th>
+                <th>Latin_name</th>
+                <th>French_name</th>
+                <th>English_name</th>
+                <th>Area_in_square_degrees</th>
+                <th>Dec_Declinaison</th>
+                <th>RA_Right_Ascension</th>
+                <th>Principal_star</th>
+                <th>Area_celestial_sphere</th>
+                <th>Zone_celestial_equator</th>
+                <th>Zone_ecliptic</th>
+                <th>Zone_Milky_Way</th>
+                <th>Quad</th>
+                <th>Name_origin</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for constellation in constellations %}
+            <tr>
+                <td><img src={{ constellation.pictures }}/></td>
+                <td>{{ constellation.ObservationSeason }}</td>
+                <td>{{ constellation.CodeConstellation }}</td>
+                <td>{{ constellation.LatinName }}</td>
+                <td>{{ constellation.FrenchName }}</td>
+                <td>{{ constellation.EnglishName }}</td>
+                <td>{{ constellation.areaInSquareDegrees }}</td>
+                <td>{{ constellation.DecDeclinaison }}</td>
+                <td>{{ constellation.RARightAscension }}</td>
+                <td>{{ constellation.PrincipalStar }}</td>
+                <td>{{ constellation.areaCelestialSphere }}</td>
+                <td>{{ constellation.zoneCelestialEquator }}</td>
+                <td>{{ constellation.zoneEcliptic }}</td>
+                <td>{{ constellation.zoneMilkyWay }}</td>
+                <td>{{ constellation.Quad }}</td>
+                <td>{{ constellation.NameOrigin }}</td>
+                <td>{{ constellation.id }}</td>
+                <td>
+                    <a href="{{ path('app_constellation_show', {'id': constellation.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_constellation_new') }}">Create new</a>
+{% endblock %}

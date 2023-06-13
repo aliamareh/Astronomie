@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MessierCatalogue{% endblock %}
+
+{% block body %}
+    <h1>MessierCatalogue</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+            <tr>
+                <th>Image</th>
+                <td><img src={{ messier_catalogue.URLDeLimage }} /></td>
+            </tr>
+                <th>Id</th>
+                <td>{{ messier_catalogue.id }}</td>
+            </tr>
+            <tr>
+                <th>Messier</th>
+                <td>{{ messier_catalogue.Messier }}</td>
+            </tr>
+            <tr>
+                <th>NGC</th>
+                <td>{{ messier_catalogue.NGC }}</td>
+            </tr>
+            <tr>
+                <th>Object_type</th>
+                <td>{{ messier_catalogue.ObjectType }}</td>
+            </tr>
+            <tr>
+                <th>Season</th>
+                <td>{{ messier_catalogue.Season }}</td>
+            </tr>
+            <tr>
+                <th>Magnitude</th>
+                <td>{{ messier_catalogue.Magnitude }}</td>
+            </tr>
+            <tr>
+                <th>Constellation_EN</th>
+                <td>{{ messier_catalogue.ConstellationEN }}</td>
+            </tr>
+            <tr>
+                <th>Constellation_FR</th>
+                <td>{{ messier_catalogue.ConstellationFR }}</td>
+            </tr>
+            <tr>
+                <th>Constellation_Latin</th>
+                <td>{{ messier_catalogue.ConstellationLatin }}</td>
+            </tr>
+            <tr>
+                <th>RA_Right_Ascension</th>
+                <td>{{ messier_catalogue.RARightAscension }}</td>
+            </tr>
+            <tr>
+                <th>Dec_Declinaison</th>
+                <td>{{ messier_catalogue.DecDeclinaison }}</td>
+            </tr>
+            <tr>
+                <th>Distance_ly_a_l</th>
+                <td>{{ messier_catalogue.DistanceLyAL }}</td>
+            </tr>
+            <tr>
+                <th>Size_Dimension</th>
+                <td>{{ messier_catalogue.SizeDimension }}</td>
+            </tr>
+            <tr>
+                <th>Discoverer</th>
+                <td>{{ messier_catalogue.Discoverer }}</td>
+            </tr>
+            <tr>
+                <th>Year_Annee</th>
+                <td>{{ messier_catalogue.YearAnnee }}</td>
+            </tr>
+            <tr>
+                <th>Pictures</th>
+                <td>{{ messier_catalogue.Pictures }}</td>
+            </tr>
+            <tr>
+                <th>Constellation</th>
+                <td>{{ messier_catalogue.Constellation }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_messier_catalogue_index') }}">back to list</a>
+
+    <a href="{{ path('app_messier_catalogue_edit', {'id': messier_catalogue.id}) }}">edit</a>
+
+    {{ include('messier_catalogue/_delete_form.html.twig') }}
+{% endblock %}

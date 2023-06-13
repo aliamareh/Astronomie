@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Constellation{% endblock %}
+
+{% block body %}
+    <h1>Edit Constellation</h1>
+
+    {{ include('constellation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_constellation_index') }}">back to list</a>
+
+    {{ include('constellation/_delete_form.html.twig') }}
+{% endblock %}
